@@ -220,7 +220,7 @@ footer {
 
 .main-content {
   padding: 20px;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .card-container {
@@ -252,6 +252,19 @@ footer {
   line-height: 1.5;
 }
 
+.output-query-container
+{
+  text-align: center;
+  margin: 60px;
+}
+
+.result-query
+{
+  background-color: rgba(157, 231, 97, 0.596);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .chat-container {
   margin-top: auto;
   text-align: center;
@@ -281,8 +294,42 @@ footer {
 {
   cursor: pointer;
 }
+.output-query-container {
+  /* Your existing styles for output query container */
+}
 
-@media (max-width: 225px) {
+.query-and-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.query-container {
+  flex: 1;
+}
+
+.test-query-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 20px; /* Adjust the spacing between the query and the button */
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.test-query-button:hover {
+  background-color: #45a049;
+}
+
+.test-query-button:active {
+  background-color: #3e8e41;
+}
+
+
+@media (max-width: 300px) {
   .side-bar-container {
     display: none; /* Hide sidebar */
   }
