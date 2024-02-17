@@ -1,3 +1,80 @@
+.home-container {
+  
+  background: linear-gradient(-45deg,#415800,#e560dc,#ffb374,#ef5f5f,#d840b6);
+  animation: bg 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  
+}
+
+.text-container {
+  text-align: center;
+  color: #f5f5f5; /* Light gray text color */
+  padding-left: 1px;
+}
+
+.main-heading {
+  color: black;
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+td{
+  padding: 50px;
+}
+
+.sub-heading {
+  color: black;
+  font-size: 34px;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 10px 20px;
+  font-size: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  color: #f5f5f5; /* Light gray text color */
+  transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.primary-button:hover {
+  background-color: #901cb7; /* Darker green color on hover */
+}
+
+.secondary-button:hover {
+  background-color: #357a38; /* Darker red color on hover */
+}
+
+.primary-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for the button */
+}
+
+.secondary-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Red color for secondary button */
+}
+
+.image-container {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.home-image {
+  width: 550px; /* Adjust the width of the image as needed */
+  height: auto;
+  border-radius: 30px;
+  padding-top: 10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +84,7 @@ html, body {
   padding: 0;
   background-color: #FFF7ED;
   font-family: "Inter", sans-serif;
+  
   /* overflow: hidden; Hide main scrollbar */
 }
 
@@ -124,48 +202,6 @@ footer {
   transform: translate(1px, 1px);
 }
 
-/*** HOME PAGE ***/
-.home-container {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./assets/images/home-hero.png") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 350px;
-  color: white;
-  padding: 45px 23px;
-}
-
-.home-container h1 {
-  font-weight: 700;
-  font-size: 2.25rem;
-  line-height: 42px;
-}
-
-.home-container p {
-  line-height: 24px;
-}
-
-.home-container a {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  background-color: #FF8C38;
-  border: none;
-  width: 100%;
-  margin-top: 27px;
-  padding-block: .75rem;
-  color: white;
-  font-weight: 700;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform .1s ease-in-out;
-}
-
-.home-container a:hover {
-  transform: translate(1px, 1px);
-}
-
 /*InputOutput Page*/
 
 .side-bar-container
@@ -224,7 +260,7 @@ footer {
 
 .main-content {
   padding: 20px;
-  flex: 1;
+  /* flex: 1; */
 }
 
 .card-container {
@@ -256,6 +292,19 @@ footer {
   line-height: 1.5;
 }
 
+.output-query-container
+{
+  text-align: center;
+  margin: 60px;
+}
+
+.result-query
+{
+  background-color: rgba(157, 231, 97, 0.596);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .chat-container {
   margin-top: auto;
   text-align: center;
@@ -285,8 +334,42 @@ footer {
 {
   cursor: pointer;
 }
+.output-query-container {
+  /* Your existing styles for output query container */
+}
 
-@media (max-width: 225px) {
+.query-and-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.query-container {
+  flex: 1;
+}
+
+.test-query-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 20px; /* Adjust the spacing between the query and the button */
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.test-query-button:hover {
+  background-color: #45a049;
+}
+
+.test-query-button:active {
+  background-color: #3e8e41;
+}
+
+
+@media (max-width: 300px) {
   .side-bar-container {
     display: none; /* Hide sidebar */
   }

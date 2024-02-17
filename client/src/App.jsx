@@ -9,8 +9,9 @@ import {
 } from "react-router-dom"
 
 import Layout from './components/Layout';
+import Home from './pages/home';
 // import ChatPg from './pages/ChatPg';
-import Home from './pages/InputOutput';
+import InputOutput from './pages/InputOutput';
 import NotFound from './pages/NotFound';
 // import Home1 from './pages/Home'
 import Cp from './pages/InputOutput';
@@ -18,9 +19,10 @@ import Playground from './pages/Playground';
 import Ace from './pages/Ace';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
-    <Route index element={<Home />} />
+    <Route index element={<InputOutput />} />
     {/* <Route path='/chatPg' element={<ChatPg/>}/> */}
     <Route path='/cp' element={<Cp/>}/>
+    <Route path='/hom' element={<Home/>}/>
     <Route path='/pg' element={<Playground/>}/>
     <Route path='/ace' element={<Ace/>}/>
     <Route path="*" element={<NotFound />} />
