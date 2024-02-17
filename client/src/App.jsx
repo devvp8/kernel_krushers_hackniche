@@ -9,6 +9,7 @@ import {
 } from "react-router-dom"
 
 import Layout from './components/Layout';
+import Home from './pages/home';
 // import ChatPg from './pages/ChatPg';
 import InputOutput from './pages/InputOutput';
 import NotFound from './pages/NotFound';
@@ -19,6 +20,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<InputOutput />} />
     {/* <Route path='/chatPg' element={<ChatPg/>}/> */}
     <Route path='/cp' element={<Cp/>}/>
+    <Route path='/hom' element={<Home/>}/>
     <Route path="*" element={<NotFound />} />
   </Route>
 ))
