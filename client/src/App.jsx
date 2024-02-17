@@ -10,13 +10,13 @@ import {
 
 import Layout from './components/Layout';
 // import ChatPg from './pages/ChatPg';
-import Home from './pages/InputOutput';
+import InputOutput from './pages/InputOutput';
 import NotFound from './pages/NotFound';
 // import Home1 from './pages/Home'
 import Cp from './pages/InputOutput';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
-    <Route index element={<Home />} />
+    <Route index element={<InputOutput />} />
     {/* <Route path='/chatPg' element={<ChatPg/>}/> */}
     <Route path='/cp' element={<Cp/>}/>
     <Route path="*" element={<NotFound />} />
