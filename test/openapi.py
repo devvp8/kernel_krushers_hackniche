@@ -17,7 +17,7 @@ thread = client.beta.threads.create()
 message = client.beta.threads.messages.create(
     thread_id=thread.id,
     role="user",
-    content="write a program to implemnet merge sort",
+    content="write a program to implemnet merge sort inputs_contstraint : (array containing elements) output_constraint :(sorted array) }",
 )
 print(message)
 run = client.beta.threads.runs.create(
