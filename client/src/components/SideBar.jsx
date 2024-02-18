@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Button, TextField, Select, MenuItem, FormControl, InputLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './Test.css'; // Import CSS file for additional styling
-// import axios from 'axios'
+import axios from 'axios'
+
+import utilsContext from "../context/utilsContext";
+
 function SideBar() {
   const [tables, setTables] = useState([]);
 
@@ -27,9 +30,11 @@ function SideBar() {
     setTables(newTables);
   };
 
+  const [sidebarData, setSidebarData, mainContentInput, setMainContentInput, queryResponse, setQueryResponse] = React.useContext(utilsContext);   //Global Context
+
   const generateTestInput = async() => {
     // Prepare the data to be sent to the backend
-    const testData = {
+    setSidebarData({
       tables: tables.map(table => ({
         name: table.name,
         attributes: table.attributes.map(attribute => ({
@@ -39,27 +44,36 @@ function SideBar() {
           referenceTable: attribute.referenceTable
         }))
       }))
-    };
-    console.log(testData)
-    // Send the data to the backend
-    // try {
-    //     const response = await axios.post('your-backend-url', testData, {
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       }
-    //     });
+    });
+    console.log(sidebarData);
+    console.log(mainContentInput);
+    //Send the data to the backend
+    try {
+        const response = await axios.post('https://b75d-14-139-125-227.ngrok-free.app/api/querygenerate/', 
+            {
+                schema: JSON.stringify(sidebarData), 
+                prompt: `${mainContentInput}`, 
+                language: 'javascript'
+            }, 
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+            }
+        });
     
-    //     if (response.status === 200) {
-    //       console.log('Test input generated and sent successfully!');
-    //       // Handle success response from the backend
-    //     } else {
-    //       console.error('Failed to generate and send test input.');
-    //       // Handle error response from the backend
-    //     }
-    //   } catch (error) {
-    //     console.error('Error occurred while sending test input:', error);
-    //     // Handle fetch error
-    //   }
+        if (response.status === 200) {
+            console.log(response.data);
+            setQueryResponse(response.data);
+          console.log('Test input generated and sent successfully!');
+          // Handle success response from the backend
+        } else {
+          console.error('Failed to generate and send test input.');
+          // Handle error response from the backend
+        }
+      } catch (error) {
+        console.error('Error occurred while sending test input:', error);
+        // Handle fetch error
+      }
   };
 
   return (

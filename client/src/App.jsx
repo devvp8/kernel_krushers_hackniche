@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import QueryGenerator from './pages/QueryGenerator';
 import CodeGenerator from './pages/CodeGenerator';
 import NotFound from './pages/NotFound';
+import utilsContext from "./context/utilsContext";
 
 import Playground from './pages/Playground';
 import Ace from './pages/Ace';
@@ -29,7 +30,13 @@ const router = createBrowserRouter(createRoutesFromElements(
 ))
 
 export default function App() {
+  let [sidebarData, setSidebarData] = React.useState(null);
+  let [mainContentInput, setMainContentInput] = React.useState("");
+  let [queryResponse, setQueryResponse] = React.useState(null);
+
   return (
-    <RouterProvider router={router} />
+    <utilsContext.Provider value={[sidebarData, setSidebarData, mainContentInput, setMainContentInput, queryResponse, setQueryResponse]}>
+        <RouterProvider router={router} />
+    </utilsContext.Provider>
   )
 }

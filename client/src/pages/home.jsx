@@ -1,6 +1,10 @@
 import React from "react"
+import { useNavigate} from 'react-router-dom';
+
 
 export default function Home(){
+
+const navigate = useNavigate();
     return(
         <div className="home-container">
             <table>
@@ -12,8 +16,8 @@ export default function Home(){
         <p className="sub-heading">Generate Code or Queries on the Database</p>
       </div>
       <div className="buttons-container">
-        <button className="primary-button">Generate Codes</button>
-        <button className="secondary-button">Generate Query</button>
+        <button className="primary-button" onClick={() => navigate("/code-generator")}>Generate Codes</button>
+        <button className="secondary-button" onClick={() => navigate("/query-generator")}>Generate Query</button>
       </div></td>
       <td>
       <div className="image-container">
@@ -23,6 +27,5 @@ export default function Home(){
       </tr>
       </table>
     </div>
-        
     );
 }
