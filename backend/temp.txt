@@ -1,14 +1,6 @@
-def lcm(a, b):
-    max_val = max(a, b)
-    while True:
-        if max_val % a == 0 and max_val % b == 0:
-            lcm = max_val
-            break
-        max_val += 1
-    return lcm
+def is_anagram(str1, str2):
+    return sorted(str1) == sorted(str2)
 
-# Example usage
-num1 = 12
-num2 = 30
-result = lcm(num1, num2)
-print("LCM of", num1, "and", num2, "is", result)
+
+print(is_anagram("hello", "olleh"))  # True
+print(is_anagram("hello", "world"))  # False
