@@ -52,7 +52,7 @@ export default function OutputQuery() {
             <div className="query-and-button-container">
                 <div className="query-container">
                     <CodeMirror
-                        value={queryResponse.response[0]}
+                        value={queryResponse}
                         options={{
                             mode: "JavaScript",
                             theme: "dracula",

@@ -45,7 +45,7 @@ export default function MainContent()
             {queryResponse ? <OutputQuery /> : null}
             <div className="chat-container">
                 <h2>Ask your Query here: </h2>
-                <input type="text" value={mainContentInput} onChange={(e) => setMainContentInput(e.value)} className="chat-input" placeholder="Your Query goes here!" />
+                <input type="text" value={mainContentInput} onChange={(e) => setMainContentInput(e.target.value)} className="chat-input" placeholder="Your Query goes here!" />
             </div>
             </main>
         </div>

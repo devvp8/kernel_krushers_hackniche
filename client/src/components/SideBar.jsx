@@ -64,7 +64,7 @@ function SideBar() {
     
         if (response.status === 200) {
             console.log(response.data);
-            setQueryResponse(response.data);
+            setQueryResponse(response.data.code);
           console.log('Test input generated and sent successfully!');
           // Handle success response from the backend
         } else {
