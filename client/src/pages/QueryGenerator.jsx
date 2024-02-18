@@ -2,7 +2,7 @@ import React from 'react'
 import SideBar from '../components/SideBar'
 import MainContent from '../components/MainContent'
 
-const InputOutput = () => {
+const QueryGenerator = () => {
   return (
     <>
       <SideBar />
@@ -11,4 +11,4 @@ const InputOutput = () => {
   )
 }
 
-export default InputOutput
+export default QueryGenerator

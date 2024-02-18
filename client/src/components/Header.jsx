@@ -13,16 +13,16 @@ export default function Header() {
             <Link className="site-logo" to="/">#Codex</Link>
             <nav>
                 <NavLink 
-                    to="host"
+                    to="query-generator"
                     style={({isActive}) => isActive ? activeStyles : null}
                 >
-                    Host
+                    Query Generator
                 </NavLink>
                 <NavLink 
-                    to="about"
+                    to="/code-generator"
                     style={({isActive}) => isActive ? activeStyles : null}
                 >
-                    About
+                    Code Generator
                 </NavLink>
                 <NavLink 
                     to="vans"

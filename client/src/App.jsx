@@ -9,18 +9,17 @@ import {
 } from "react-router-dom"
 
 import Layout from './components/Layout';
-import Home from './pages/home';
-// import ChatPg from './pages/ChatPg';
-import InputOutput from './pages/InputOutput';
+import Home from './pages/Home';
+import QueryGenerator from './pages/QueryGenerator';
+import CodeGenerator from './pages/CodeGenerator';
 import NotFound from './pages/NotFound';
-// import Home1 from './pages/Home'
-import Cp from './pages/InputOutput';
+
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
-    <Route index element={<InputOutput />} />
+    <Route index element={<Home />} />
     {/* <Route path='/chatPg' element={<ChatPg/>}/> */}
-    <Route path='/cp' element={<Cp/>}/>
-    <Route path='/hom' element={<Home/>}/>
+    <Route path='/query-generator' element={<QueryGenerator/>}/>
+    <Route path='/code-generator' element={<CodeGenerator />} />
     <Route path="*" element={<NotFound />} />
   </Route>
 ))
