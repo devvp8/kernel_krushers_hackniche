@@ -84,6 +84,7 @@ function SideBar() {
         {tables.map((table, tableIndex) => (
           <div key={tableIndex} className="table-container">
             <TextField
+              className='table-input-field'
               type="text"
               placeholder="Table Name"
               value={table.name}
