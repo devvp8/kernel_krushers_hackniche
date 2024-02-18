@@ -1,0 +1,21 @@
+************************************* Invoked: Sat Feb 17 16:39:39 2024
+[0] Arguments: C:\Users\Devansh\Downloads\msys2-x86_64-20240113.exe, temp.txt, -o, C:\Users\Devansh\.compile-run2\tmp\cpp\source-bf88c00a4ebf787ae0fe207b5405a768-1708168179546.exe, -lstdc++
+[8] Operations sanity check succeeded.
+[14] Using metadata cache from "C:/Users/Devansh/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[14] Found 0 cached items.
+[14] Language: en-US
+[14] Script file does not exist.
+************************************* Invoked: Sat Feb 17 16:42:54 2024
+[0] Arguments: C:\Users\Devansh\Downloads\msys2-x86_64-20240113.exe, C:\Users\Devansh\.compile-run2\tmp\cpp\source-438aac3b954702199b1607a7967da7de-1708168374562.cpp, -o, C:\Users\Devansh\.compile-run2\tmp\cpp\source-a7c39f85e2edf2ce760fdd6143b058cc-1708168374565.exe, -lstdc++
+[6] Operations sanity check succeeded.
+[11] Using metadata cache from "C:/Users/Devansh/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[11] Found 0 cached items.
+[11] Language: en-US
+[11] Script file does not exist.
+************************************* Invoked: Sat Feb 17 17:28:02 2024
+[0] Arguments: C:\Users\Devansh\Downloads\msys2-x86_64-20240113.exe, C:\Users\Devansh\.compile-run2\tmp\cpp\source-e1d526145e7172e641ffc7aaab7643d8-1708171082129.cpp, -o, C:\Users\Devansh\.compile-run2\tmp\cpp\source-3a3798070a116750783866052e193ad7-1708171082131.exe, -lstdc++
+[4] Operations sanity check succeeded.
+[11] Using metadata cache from "C:/Users/Devansh/AppData/Local/cache\\qt-installer-framework\\d75f1c19-3379-3717-ae8d-1404b51494a9"
+[11] Found 0 cached items.
+[11] Language: en-US
+[11] Script file does not exist.

@@ -205,18 +205,20 @@ footer {
 
 .side-bar-container
 {
-  width: 250px;
+  /* width: 350px; */
+  width: 50%;
   position: fixed;
   top: 0;
   left: 0;
   background-color: #333;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   height: 100%; /* Adjust the height to cover the full viewport height */
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport */
+  overflow-y: visible; /* Enable vertical scrolling if content exceeds viewport */
   /* z-index: 100; Ensure sidebar stays on top of other elements */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .app {
@@ -226,8 +228,8 @@ footer {
   display: flex;
   flex-direction: column;
   /* min-height: 100vh; */
-  margin-left: 250px;
-  padding: 20px;
+  /* margin-left: 250px; */
+  /* padding: 20px; */
   /* height: calc(100vh - 140px); Subtract height of header and footer */
   overflow-y: auto; /* Enable scrollbar for content */
   overflow-x: auto;
