@@ -50,7 +50,7 @@ function SideBar() {
     console.log(mainContentInput);
     //Send the data to the backend
     try {
-        const response = await axios.post('https://b75d-14-139-125-227.ngrok-free.app/api/querygenerate/', 
+        const response = await axios.post('https://c1d7-14-139-125-227.ngrok-free.app/api/querygenerate/', 
             {
                 schema: JSON.stringify(sidebarData), 
                 prompt: `${mainContentInput}`, 
@@ -64,7 +64,9 @@ function SideBar() {
     
         if (response.status === 200) {
             console.log(response.data);
-            setQueryResponse(response.data.code);
+            let res=JSON.parse(response.data)
+            console.log(res.code)
+            setQueryResponse(res.code);
           console.log('Test input generated and sent successfully!');
           // Handle success response from the backend
         } else {
