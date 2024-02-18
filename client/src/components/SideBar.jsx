@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Button, TextField, Select, MenuItem, FormControl, InputLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Button, TextField, Select, MenuItem, FormControl, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './Test.css'; // Import CSS file for additional styling
-// import axios from 'axios'
+import axios from 'axios';
+
 function SideBar() {
   const [tables, setTables] = useState([]);
+  const [queryResult, setQueryResult] = useState(null); // State to store the query result
 
   const addTable = () => {
     setTables([...tables, { name: '', attributes: [] }]);
@@ -27,8 +29,7 @@ function SideBar() {
     setTables(newTables);
   };
 
-  const generateTestInput = async() => {
-    // Prepare the data to be sent to the backend
+  const generateTestInput = async () => {
     const testData = {
       tables: tables.map(table => ({
         name: table.name,
@@ -40,26 +41,24 @@ function SideBar() {
         }))
       }))
     };
-    console.log(testData)
+
     // Send the data to the backend
-    // try {
-    //     const response = await axios.post('your-backend-url', testData, {
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       }
-    //     });
-    
-    //     if (response.status === 200) {
-    //       console.log('Test input generated and sent successfully!');
-    //       // Handle success response from the backend
-    //     } else {
-    //       console.error('Failed to generate and send test input.');
-    //       // Handle error response from the backend
-    //     }
-    //   } catch (error) {
-    //     console.error('Error occurred while sending test input:', error);
-    //     // Handle fetch error
-    //   }
+    try {
+      const response = await axios.post('https://b75d-14-139-125-227.ngrok-free.app/api/querygenerate/', { schema: JSON.stringify(testData), language: 'javascript', prompt: 'retrieve records of student name of computer department having marks greater than 100' }, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.status === 200) {
+        setQueryResult(response.data.response[0]); 
+        console.log('Test input generated and sent successfully!');
+      } else {
+        console.error('Failed to generate and send test input.');
+      }
+    } catch (error) {
+      console.error('Error occurred while sending test input:', error);
+    }
   };
 
   return (
@@ -76,7 +75,7 @@ function SideBar() {
             />
             <Button variant="contained" onClick={() => addAttribute(tableIndex)}>Add Attribute</Button>
             <TableContainer component={Paper}>
-              <Table background-color="background-color: antiquewhite">
+              <Table>
                 <TableHead>
                   <TableRow>
                     <TableCell style={{ minWidth: '200px' }}>Attr.Name</TableCell>
@@ -145,6 +144,7 @@ function SideBar() {
           <Button variant="contained" onClick={generateTestInput}>Generate Test Input</Button>
         </div>
       </div>
+      {/* {queryResult && <OutputQuery queryResult={queryResult} />} Render OutputQuery only when queryResult is not null */}
     </div>
   );
 }
