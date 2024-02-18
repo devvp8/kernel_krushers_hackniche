@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Select, MenuItem, FormControl, InputLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Button, TextField, Select, MenuItem, FormControl, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import './Test.css'; // Import CSS file for additional styling
 import axios from 'axios'
 
@@ -7,6 +7,7 @@ import utilsContext from "../context/utilsContext";
 
 function SideBar() {
   const [tables, setTables] = useState([]);
+  const [queryResult, setQueryResult] = useState(null); // State to store the query result
 
   const addTable = () => {
     setTables([...tables, { name: '', attributes: [] }]);
@@ -90,7 +91,7 @@ function SideBar() {
             />
             <Button variant="contained" onClick={() => addAttribute(tableIndex)}>Add Attribute</Button>
             <TableContainer component={Paper}>
-              <Table background-color="background-color: antiquewhite">
+              <Table>
                 <TableHead>
                   <TableRow>
                     <TableCell style={{ minWidth: '200px' }}>Attr.Name</TableCell>
@@ -159,6 +160,7 @@ function SideBar() {
           <Button variant="contained" onClick={generateTestInput}>Generate Test Input</Button>
         </div>
       </div>
+      {/* {queryResult && <OutputQuery queryResult={queryResult} />} Render OutputQuery only when queryResult is not null */}
     </div>
   );
 }

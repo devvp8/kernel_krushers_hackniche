@@ -1,4 +1,5 @@
 import React from "react";
+import Playground from "./Playground";
 
 export default function CodeGenerator() {
     const [sliderPosition, setSliderPosition] = React.useState(50); // Initial position of the slider
@@ -24,16 +25,14 @@ export default function CodeGenerator() {
 
     return (
         <div className="container" ref={containerRef}>
-        <div className="left-section" style={{ width: `${sliderPosition}%` }}>
-            {/* Content for the left section */}
-            Left Section
-        </div>
-        <div className="slider" style={{ left: `${sliderPosition}%` }} onMouseDown={handleMouseDown} />
-        <div className="right-section" style={{ width: `${100 - sliderPosition}%` }}>
-            {/* Content for the right section */}
-            Right Section
-        </div>
+            {/* <div className="left-section" style={{ width: `${sliderPosition}%` }}>
+                Left
+            </div>
+            <div className="slider" style={{ left: `${sliderPosition}%` }} onMouseDown={handleMouseDown} /> */}
+            <div className="right-section" style={{ width: `${100}%` }}>
+                {/* Content for the right section */}
+               <Playground/>
+            </div>
         </div>
     );
-  }
-  
+}
