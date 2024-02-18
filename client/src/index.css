@@ -7,7 +7,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  
 }
 
 .text-container {
@@ -22,6 +21,7 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 td{
   padding: 50px;
 }
@@ -165,7 +165,6 @@ footer {
   color: #AAAAAA;
   height: 65px;
   display: flex;
-  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   margin-top: auto;
@@ -234,8 +233,7 @@ footer {
   /* height: calc(100vh - 140px); Subtract height of header and footer */
   overflow-y: auto; /* Enable scrollbar for content */
   overflow-x: auto;
-  margin-left: 50%;
-  padding: 100px;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -260,6 +258,9 @@ footer {
 
 .main-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   /* flex: 1; */
 }
 
@@ -334,13 +335,11 @@ footer {
 {
   cursor: pointer;
 }
-.output-query-container {
-  /* Your existing styles for output query container */
-}
 
 .query-and-button-container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .query-container {
@@ -376,4 +375,43 @@ footer {
   .app {
     margin-left: 0; /* Adjust main content margin */
   }
+}
+
+/*CODE GENERATOR PAGE*/
+
+.container {
+  display: flex;
+  height: 100vh; /* Adjust height as needed */
+  position: relative;
+}
+
+.left-section, .right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  overflow-y: auto; /* Add scroll if content overflows vertically */
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  width: 6px; /* Width of the slider */
+  height: 100%;
+  background-color: #007bff; /* Slider handle color */
+  cursor: ew-resize; /* Cursor type for horizontal resize */
+}
+
+/* Optional: Style the slider handle */
+.slider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px; /* Width of the handle */
+  height: 12px; /* Height of the handle */
+  background-color: white; /* Handle color */
+  border: 1px solid #007bff; /* Border color */
+  border-radius: 50%; /* Rounded handle */
 }
