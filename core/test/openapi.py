@@ -14,11 +14,11 @@ def generate_openai(schema, language, database, prompt):
     client = OpenAI(
         api_key=os.environ.get("OPENAI_API_KEY"),
     )
-    prompt= f"""for this schema {schema} Give me a function in {language} to {prompt}  in {database}"""
+    prompt= f"""for the following schema {schema} Give me a function based query in {language} to {prompt} for {database}"""
     completion = client.chat.completions.create(
     model="gpt-3.5-turbo-16k-0613",
     messages=[
-        {"role": "system", "content": "You are a function code generator assistant where you have task to generate function code query to generate result based on user prompt"},
+        {"role": "system", "content": "You are a function query code generator assistant where you have task to generate function code query"},
         {"role": "user", "content": prompt}
     ],
     stream=True
@@ -28,6 +28,7 @@ def generate_openai(schema, language, database, prompt):
         if chunk.choices[0].delta.content:
             response += chunk.choices[0].delta.content
             print(chunk.choices[0].delta.content,end="")
+    print(response)
     return segerate(response)
     
     

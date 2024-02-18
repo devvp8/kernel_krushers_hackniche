@@ -54,17 +54,15 @@ def generate_gemini(schema, language, database, prompt):
     )
     convo = model.start_chat(history=[])
     res = convo.send_message(
-        f"""for this schema {schema} Give me a function in {language} to {prompt} in {database}""",
+        f"""for the following schema {schema} Give me a function based query in {language} to {prompt} for {database}.""",
         stream=True,
     )
     response = ""
     for chunk in res:
         response += chunk.text
-    # print(response)
     q_code = segerate(response)
     result = {"code": q_code}
     json_result1 = json.dumps(result, indent=2)
-    # print(json_result1)
 
     res = convo.send_message(
         "give me just sample input data values for the previous code you provided in javascript",
@@ -73,11 +71,9 @@ def generate_gemini(schema, language, database, prompt):
     response2 = ""
     for chunk in res:
         response2 += chunk.text
-    # print(response2)
     q_code = segerate(response2)
     result = {"input_data": q_code}
     json_result2 = json.dumps(result, indent=2)
-    # print(json_result2)
 
     res = convo.send_message(
         "give me sample output data values for the previous code you provided",
