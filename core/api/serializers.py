@@ -7,3 +7,8 @@ class QueryGeneratorSerializer(serializers.Serializer):
     code = serializers.CharField(required=False)
     
     
+class CodeGeneratorSerializer(serializers.Serializer):
+    language = serializers.CharField()
+    prompt = serializers.CharField()
+    code = serializers.CharField(required=False)
+    
