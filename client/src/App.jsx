@@ -18,7 +18,7 @@ import Playground from './pages/Playground';
 import Ace from './pages/Ace';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<Layout />}>
-    <Route index element={<Home />} />
+    <Route index element={<Home/>} />
     {/* <Route path='/chatPg' element={<ChatPg/>}/> */}
     <Route path='/query-generator' element={<QueryGenerator/>}/>
     <Route path='/code-generator' element={<CodeGenerator />} />

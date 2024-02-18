@@ -367,7 +367,6 @@ footer {
   background-color: #3e8e41;
 }
 
-
 @media (max-width: 300px) {
   .side-bar-container {
     display: none; /* Hide sidebar */
