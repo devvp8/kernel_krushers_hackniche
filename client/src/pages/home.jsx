@@ -13,11 +13,11 @@ const navigate = useNavigate();
       <div className="text-container">
         <p className="main-heading">Introducing the CodeGenerator</p>
         <p className="sub-heading">One Solution to Solve Problems and</p>
-        <p className="sub-heading">Generate Code or Queries on the Database</p>
+        <p className="sub-heading">Generate Code</p>
       </div>
       <div className="buttons-container">
         <button className="primary-button" onClick={() => navigate("/code-generator")}>Generate Codes</button>
-        <button className="secondary-button" onClick={() => navigate("/query-generator")}>Generate Query</button>
+        {/* <button className="secondary-button" onClick={() => navigate("/query-generator")}>Generate Query</button> */}
       </div></td>
       <td>
       <div className="image-container">

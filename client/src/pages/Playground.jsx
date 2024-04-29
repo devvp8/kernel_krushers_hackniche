@@ -91,11 +91,11 @@ function Playground() {
 
       // Fetch and set Gemini code
       const geminiResponse = await axios.post(
-        "https://b75d-14-139-125-227.ngrok-free.app/api/codegenerator/",
+        "http://127.0.0.1:8000/api/codegenerator/",
         { prompt: userInput, language: selectedLanguage }
       );
       setGeminiCode(geminiResponse.data.gemini);
-      setOpenAICode(geminiResponse.data.openai)
+      // setOpenAICode(geminiResponse.data.openai)
     } catch (error) {
       console.error("Error:", error);
     }
@@ -132,7 +132,7 @@ function Playground() {
             <div className="d-flex justify-content-between align-items-center bg-dark rounded ">
               <div>
                 <label className="text-light mb-0" htmlFor="geminiOutput">
-                  OpenAI Code   
+                  Code   
                 </label>
               </div>
               <div style={{margin:'auto'}}>
@@ -177,7 +177,7 @@ function Playground() {
             <div className="d-flex justify-content-between align-items-center bg-dark rounded ">
               <div>
                 <label className="text-light mb-0" htmlFor="geminiOutput">
-                  Gemini Code
+                  Code
                 </label>
               </div>
               <div>
@@ -217,7 +217,7 @@ function Playground() {
           <div className="bg-dark rounded p-4">
             {/* Display OpenAI code */}
             <label className="text-light mb-2" htmlFor="openAIOutput">
-              OpenAI Output
+              Output
             </label>
             <textarea
               className="form-control"
@@ -232,7 +232,7 @@ function Playground() {
           <div className="bg-dark rounded p-4">
             {/* Display chat messages */}
             <label className="text-light mb-2" htmlFor="output">
-              Gemini Output
+              Output
             </label>
             <textarea
               className="form-control"
@@ -243,11 +243,11 @@ function Playground() {
             ></textarea>
           </div>
         </div>
-        {chatMessages.map((chat, index) => (
+        {/* {chatMessages.map((chat, index) => (
           <div key={index} className={"user-message"}>
             {chat.message}
           </div>
-        ))}
+        ))} */}
         <div className="mt-3">
           <input
             type="text"
@@ -263,6 +263,12 @@ function Playground() {
           >
             Send Prompt
           </button>
+          {geminiCode && (
+        <div className="mt-3">
+          <h3>Response:</h3>
+          <pre>{geminiCode}</pre>
+        </div>
+      )}
         </div>
       </div>
     </div>

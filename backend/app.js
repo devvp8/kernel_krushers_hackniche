@@ -5,6 +5,7 @@ const { c, cpp, node, python, java } = require('compile-run');
 const fs = require('fs');
 const util = require('util');
 const readFileAsync = util.promisify(fs.readFile);
+// code to run
 
 app.use(cors());
 app.use(express.json());
@@ -22,7 +23,7 @@ app.post('/compile', async (req, res) => {
         else if (lang==='Cpp')
         {
         result = await cpp.runSource(data, {
-            compilationPath: "C:\\Users\\Devansh\\Downloads\\msys2-x86_64-20240113.exe"
+            compilationPath: "C:\\Users\\Dev Atul Patel\\Downloads\\msys2-x86_64-20240113.exe"
         });
         console.log(result);}
         else if (lang==='c')

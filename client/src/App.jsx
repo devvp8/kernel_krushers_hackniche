@@ -9,7 +9,7 @@ import {
 } from "react-router-dom"
 
 import Layout from './components/Layout';
-import Home from './pages/Home';
+import Home from './pages/home';
 import QueryGenerator from './pages/QueryGenerator';
 import CodeGenerator from './pages/CodeGenerator';
 import NotFound from './pages/NotFound';
